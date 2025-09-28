@@ -16,13 +16,30 @@ AI PDF Renamer Toolbox 是一个基于人工智能的PDF文件重命名工具，
 
 ### macOS版本
 
-1. 下载最新的 `AI-PDF-Renamer-Toolbox-MacOS.zip` 文件
-2. 解压缩下载的文件
-3. 双击 `AI-PDF-Renamer-Toolbox.app` 启动应用程序
+1. 访问 [Releases](https://github.com/pannylearn/AI-PDF-Renamer-toolbox/releases) 页面
+2. 下载最新的 `AI-PDF-Renamer-Toolbox-MacOS.zip` 文件
+3. 解压缩下载的文件
+4. 双击 `AI-PDF-Renamer-Toolbox.app` 启动应用程序
 
 ### 源代码版本
 
-如果您希望从源代码运行或进行开发，请查看源代码分支。
+如果您希望从源代码运行或进行开发，可以克隆此仓库并按照以下步骤操作：
+
+```bash
+# 克隆仓库
+git clone https://github.com/pannylearn/AI-PDF-Renamer-toolbox.git
+cd AI-PDF-Renamer-toolbox
+
+# 安装依赖
+pip install -r requirements.txt
+
+# 安装系统依赖
+# macOS: brew install poppler
+# Ubuntu/Debian: sudo apt-get install poppler-utils
+
+# 启动工具箱
+python toolbox.py
+```
 
 ## 配置API密钥
 
@@ -40,7 +57,13 @@ AI PDF Renamer Toolbox 是一个基于人工智能的PDF文件重命名工具，
 
 ### 图形界面模式（推荐）
 
-双击应用程序图标启动工具箱：
+双击应用程序图标或运行：
+
+```bash
+python toolbox.py
+```
+
+在图形界面中：
 1. 输入您的API密钥（支持ZhipuAI或Google Gemini）
 2. 选择包含PDF文件的文件夹
 3. 选择输出文件夹
@@ -48,20 +71,29 @@ AI PDF Renamer Toolbox 是一个基于人工智能的PDF文件重命名工具，
 
 ### 命令行模式
 
-如果您更喜欢命令行方式，也可以在终端中运行：
-
 ```bash
-# 进入应用程序包内部
-cd AI-PDF-Renamer-Toolbox.app/Contents/MacOS/
+# 基本用法
+python src/main.py /path/to/input/pdfs /path/to/output
 
-# 运行应用程序
-./AI-PDF-Renamer-Toolbox
+# 使用特定模型
+python src/main.py /input /output --model glm-4v-flash
+
+# 只分析前3页以提高准确性
+python src/main.py /input /output --max-pages 3
+
+# 仅提取元数据，不复制文件
+python src/main.py /input /output --no-copy
 ```
 
 ## 系统要求
 
+### 独立应用程序
 - macOS 10.15 或更高版本
-- 网络连接（用于AI API调用）
+
+### 源代码版本
+- Python 3.7+
+- macOS、Windows 或 Linux 操作系统
+- poppler-utils (用于PDF处理)
 
 ## 致谢
 
