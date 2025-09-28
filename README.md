@@ -21,25 +21,6 @@ AI PDF Renamer Toolbox 是一个基于人工智能的PDF文件重命名工具，
 3. 解压缩下载的文件
 4. 双击 `AI-PDF-Renamer-Toolbox.app` 启动应用程序
 
-### 源代码版本
-
-如果您希望从源代码运行或进行开发，可以克隆此仓库并按照以下步骤操作：
-
-```bash
-# 克隆仓库
-git clone https://github.com/pannylearn/AI-PDF-Renamer-toolbox.git
-cd AI-PDF-Renamer-toolbox
-
-# 安装依赖
-pip install -r requirements.txt
-
-# 安装系统依赖
-# macOS: brew install poppler
-# Ubuntu/Debian: sudo apt-get install poppler-utils
-
-# 启动工具箱
-python toolbox.py
-```
 
 ## 配置API密钥
 
